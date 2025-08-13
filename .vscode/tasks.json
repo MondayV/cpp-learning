@@ -2,24 +2,23 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: g++.exe build",
+            "label": "build",
+            "type": "shell",
             "command": "g++",
             "args": [
-                "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}/src/main.exe",
+                "${workspaceFolder}/src/*.cpp",
+                "-mwindows",
+                "-DUNICODE",
+                "-D_UNICODE"
             ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
+            "group": "build",
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build",
-            "detail": "编译器: F:/mingw64/bin/g++.exe"
+            "detail": "编译 src 目录下所有 C++ 文件，生成 main.exe"
         },
         {
             "type": "cppbuild",
@@ -30,8 +29,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                ""
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "F:/mingw64/bin"
