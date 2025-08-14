@@ -1,0 +1,6 @@
+hello hi
+world earth
+cpp c++
+programming coding
+awesome great
+test success
